@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Hilmi</title>
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN for Font Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <!-- Notifikasi Selamat Datang -->
+    <div id="welcomeNotification" class="welcome-notification">
+        <p>Selamat datang di web saya!</p>
+        <button id="closeNotification" class="close-btn">X</button>
+    </div>
+
+    <div class="container">
+        <div class="profile-card"> 
+            <div class="profile-pic">
+                <img src="images/sy.jpg" alt="user avatar" width="300" height="300">
+            </div>
+
+            <div class="profile-details">
+                <div class="intro">
+                    <h2>Ardita Hilmi</h2>
+                    <h4>IT Enthusiast</h4>
+                    <div class="social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook" style="color:var(--blue)"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter" style="color:var(--skyblue)"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-dribbble" style="color:var(--dark-pink)"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin" style="color:var(--light-blue)"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <div class="row">
+                        <div class="icon">
+                            <i class="fa fa-phone" style="color:var(--dark-magenta)"></i>
+                        </div>
+                        <div class="content">
+                            <span>Phone</span>
+                            <h5>+62 888 574 xxx</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="icon">
+                            <i class="fa fa-envelope-open" style="color:var(--light-green)"></i>
+                        </div>
+                        <div class="content">
+                            <span>Email</span>
+                            <h5>hwhwhywhxz@gmail.com</h5>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="icon">
+                            <i class="fa fa-map-marker" style="color:var(--light-purple)"></i>
+                        </div>
+                        <div class="content">
+                            <span>Location</span>
+                            <h5>Indo</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="about">
+            <h1>About Me</h1>
+            <p> I'm Hilmi, a Computer Engineering student at a university, with a strong passion for technology. As an IT enthusiast, I am always eager to explore topics such as software development, cybersecurity, and networking. Outside of my studies, I actively learn and share knowledge through open-source projects and tech communities. I am excited to continue growing in the IT field and collaborate with other professionals and technology enthusiasts.</p>
+            <h2>What I Do !!!</h2>
+            <div class="work">
+                <div class="workbox" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+                    <div class="icon">
+                        <img src="images/cyber.png" alt="Cyber Icon" width="90" height="90" style="float: left; margin-right: 10px;">
+                    </div>
+                    <div class="desc">
+                        <h3>Cyber Security</h3>
+                        <p>I'm skilled at protecting systems from cyber threats through vulnerability analysis and security solutions.</p>
+                    </div>
+                </div>
+
+                <div class="workbox" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+                    <div class="icon">
+                        <img src="images/devops.png" alt="DevOps Icon" width="80" height="80" style="float: left; margin-right: 10px;">
+                    </div>
+                    <div class="desc">
+                        <h3>DevOps</h3>
+                        <p>I integrate development and operations using CI/CD pipelines for efficiency and automation.</p>
+                    </div>
+                </div>
+
+                <div class="workbox" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+                    <div class="icon">
+                        <img src="images/code.png" alt="" width="80" height="80" style="float: left; margin-right: 10px;">
+                    </div>
+                    <div class="desc">
+                        <h3>Web Development</h3>
+                        <p>I build responsive web applications using modern technologies like React and Node.js.</p>
+                    </div>
+                </div>
+
+                <div class="workbox" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+                    <div class="icon">
+                        <img src="images/network.png" alt="" width="80" height="80" style="float: left; margin-right: 10px;">
+                    </div>
+                    <div class="desc">
+                        <h3>Networking</h3>
+                        <p>I excel at designing stable and secure networks that are easy to troubleshoot when issues arise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Smooth Scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Hover Effect
+        function hoverEffect(element) {
+            element.style.transform = "scale(1.05)";
+            element.style.transition = "transform 0.3s";
+        }
+
+        function removeHoverEffect(element) {
+            element.style.transform = "scale(1)";
+        }
+
+        // Function to show and hide scroll-to-top button
+        window.onscroll = function() {
+            const button = document.getElementById("scrollToTop");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                button.style.display = "block"; // Show button
+            } else {
+                button.style.display = "none"; // Hide button
+            }
+        };
+
+        // Function to scroll to the top
+        function scrollToTop() {
+            document.body.scrollTop = 0; // Safari
+            document.documentElement.scrollTop = 0; // Chrome, Firefox, IE
+        }
+
+        // Menampilkan notifikasi selamat datang setelah halaman dimuat
+        window.onload = function() {
+            var welcomeNotification = document.getElementById('welcomeNotification');
+            var closeBtn = document.getElementById('closeNotification');
+            
+            // Menampilkan notifikasi dengan efek animasi
+            setTimeout(function() {
+                welcomeNotification.classList.add('show'); // Menampilkan notifikasi setelah 0.5 detik
+            }, 500);
+
+            // Menutup notifikasi saat tombol "X" diklik
+            closeBtn.onclick = function() {
+                welcomeNotification.classList.remove('show'); // Menyembunyikan notifikasi dengan efek animasi
+            };
+        };
+    </script>
+</body>
+</html>
